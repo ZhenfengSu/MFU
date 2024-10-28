@@ -260,10 +260,13 @@ def get_deit_model_info_map(hidden_dim, depth, flops, params):
                
 
 if __name__ == '__main__':
-    hidden_dim = 4096
-    patch_size = 6
+    # deit-base
+    hidden_dim = 768
+    patch_size = 16
     num_classes = 1000
-    depth = 2
+    depth = 12
+    heads = 12
+    from deit_entiremodel import vit_models, Layer_scale_init_Block
     flops = flops_deit(hidden_dim, patch_size, num_classes, depth)
     print(f'FLOPs: {flops / 1e9:.3f}G Macs')
     params = params_deit(hidden_dim, patch_size, num_classes, depth)
