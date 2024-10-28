@@ -1,7 +1,7 @@
 # MFU Calculate For Deit Model
 
 ## Code Implementation Approach
-Refer to [link](https://kadxsrk5f5d.feishu.cn/wiki/YSoZwjxMNifjjdkLZzFc1dnQn0e?from=from_copylink)
+Refer to [feishu link](https://kadxsrk5f5d.feishu.cn/wiki/YSoZwjxMNifjjdkLZzFc1dnQn0e?from=from_copylink)
 
 ## Execution
 
