@@ -18,7 +18,7 @@ def mfu(model, batch_size,model_info_map):
     flops_total = flops_forward * 3
     # 计算理论上训练时间
     # flops_total的单位是MACs,所以要转换成TFLOPS(乘以2然后除以1e12)
-    flops_total = 2*flops_total / (1e9*1000)
+    flops_total = 2*flops_total / (1e12)
     time_theory = flops_total / FP32_4090
     # 把模型放到GPU上
     model = model.to(device)

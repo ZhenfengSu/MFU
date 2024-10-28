@@ -1,15 +1,4 @@
 from mfu_cal import mfu
-# # min_batch_size = 1
-# # max_batch_size = 256, 选择256是4090最大只能放得下256
-
-# # 给定model和model_info_map,返回最优的batch_size
-# def bs_search(model,model_info_map):
-#     # 先计算出bs=1时的MFU
-#     MFU_bs1 = mfu(model, 1, model_info_map)
-#     # 计算出bs=256时的MFU
-#     MFU_bs256 = mfu(model, 256, model_info_map)
-#     # 二分查找
-    
 def binary_search_max_bs(start=1, end=32, model=None,model_info_map=None):  
     """  
     使用二分搜索查找函数在[start, end]区间内的最大值。  
