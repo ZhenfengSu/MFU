@@ -267,6 +267,21 @@ if __name__ == '__main__':
     depth = 12
     heads = 12
     from deit_entiremodel import vit_models, Layer_scale_init_Block
+    from deit_entiremodel import deit_base_patch16_LS
+    model = deit_base_patch16_LS()
+    model_info_map = {
+        "hidden_dim": hidden_dim,
+        "patch_size": patch_size,
+        "heads": heads,
+        "num_classes": num_classes,
+        "depth": depth
+    }
+    from mfu_cal import mfu, mfu_throughput
+    MFU = mfu(model, 24, model_info_map)
+    print("the deit-base MFU is: " + str(MFU*100) + '%')
+    MFU, throughput = mfu_throughput(model, 24, model_info_map)
+    print("the deit-base throughput is: " + str(throughput) + 'images/s')
+    print("the deit-base MFU is: " + str(MFU*100) + '%')
     flops = flops_deit(hidden_dim, patch_size, num_classes, depth)
     print(f'FLOPs: {flops / 1e9:.3f}G Macs')
     params = params_deit(hidden_dim, patch_size, num_classes, depth)

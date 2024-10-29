@@ -5,7 +5,6 @@ import torch
 from get_model import flops_deit
 import time
 FP32_4090 = 82.6 # 单位是TFLOPS
-FP32_A6000_ADA = 38.7 # 单位是TFLOPS
 # 给定model和batch_size,计算出mfu
 def mfu(model, batch_size,model_info_map):
     print("evaluating MFU")
@@ -95,5 +94,5 @@ def mfu_throughput(model,batch_size,model_info_map):
     # 清空显存
     torch.cuda.empty_cache()
     print("MFU: " + str(MFU))
-
+    
     return MFU, throughput

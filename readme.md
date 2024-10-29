@@ -10,10 +10,11 @@ Refer to [feishu link](https://kadxsrk5f5d.feishu.cn/wiki/YSoZwjxMNifjjdkLZzFc1d
 pip install torch torchvision
 ```
 
-### Command
+### Command For single GPU
 ```bash
 # Given the FLOPs of the model, output the MFU for each model, unit in MACs  
 python main.py --flops 50 --output flops_50G.txt
 # Given the params of the model, output the MFU for each model, unit in M
 python main.py --params 50 --output params_50M.txt
 ```
+
